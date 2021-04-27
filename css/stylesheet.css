@@ -60,8 +60,13 @@ a img {
 
 /* --------------------------------------------
   * 헤더 디자인  공통 */
+  .app-header-wrapper{
+    background: rgba(255, 255, 255, 0.4);
+    margin-bottom: 30px;
+    border-bottom: 1px solid #e0e0e0;
+  }
 .app-header{
-  background-color: yellow;
+  background-color: ;
   display: flex;
   justify-content: space-between;
 }
@@ -92,22 +97,75 @@ a img {
   display: block;
   width: 26px;
   height: 22px;
-  background: url(../images/navigation-button.gif) no-repeat 50%;
+  background: url(../images/navigation-button.png) no-repeat 50%;
 }
 .is-open-menu:hover,
 .is-open-menu:focus {
   background: #f5f5f5;
 }
-/* 헤더 (모바일)  */
+/* 모바일  */
 @media screen and (max-width: 767px){
+  /* 내비게이션 모바일 */
   .app-navigation{
-    display: none;
+    /* width: 100vw;
+    height: 100vh; */
+  overflow: hidden;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-top: 150px;
+  background: hsla(225, 57%, 10%, 0.9);
+  color: #fff;
+  transition: all 0.4s cubic-bezier(0.66, -0.01, 0.3, 0.99);
+  transform: translateX(105vw);
+  backdrop-filter: blur(2px);
+  }
+  .app-navigation.is--active{
+    transform: translateX(0);
+  }
+  .app-navigation li {
+    border-top: 1px solid #fff;
+  }
+  .app-navigation a {
+    display: block;
+    padding: 1em;
+    transition: all 0.4s ease;
+  }
+  .app-navigation a:hover,
+  .app-navigation a:focus {
+    background: #2e437c;
+  }
+  .app-navigation .is-close-menu {
+    position: absolute;
+    z-index: 10;
+    top: 10px;
+    right: 10px;
+    padding: 20px;
+    background: transparent;
+    color: #fff;
+    font-weight: 100;
+    font-size: 40px;
+    line-height: 0.5;
+    transition: all 0.4s ease;
+  }
+  .app-navigation .is-close-menu:focus {
+    outline-offset: -5px;
+  }
+  
+  .app-navigation .is-close-menu:hover {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
   }
 }
 /* 헤더 (데스크탑)  */
 @media screen and (min-width: 768px){
   .app-header{
     align-items: center;
+    width: 740px;
+    margin: 0 auto;
   }
   .brand a{
     width: 140px;
@@ -134,4 +192,11 @@ a img {
   }
 }
 
-
+@media
+screen and (min-device-pixel-ratio: 2),
+screen and (min-resolution: 192dpi),
+screen and (min-resolution: 2dppx) { 
+  .is-open-menu .ir {
+    background-image: url(../images/navigation-button@2x.png);
+  }
+}
