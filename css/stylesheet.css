@@ -62,7 +62,7 @@ a img {
   * 헤더 디자인  공통 */
   .app-header-wrapper{
     background: rgba(255, 255, 255, 0.4);
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
     border-bottom: 1px solid #e0e0e0;
   }
 .app-header{
@@ -102,6 +102,84 @@ a img {
 .is-open-menu:hover,
 .is-open-menu:focus {
   background: #f5f5f5;
+}
+/* 메인 콘텐츠 공통 */
+.ediya-menu__item{
+  background-color: #efefef;
+  position: relative;
+}
+.ediya-menu [role="button"]{
+  display: block;
+}
+.ediya-menu figure{
+  margin: 0;  
+  text-align: center;
+}
+.ediya-menu img{
+  transform: scale(0.85);
+  transition: all 0.3s;
+  max-width: 100%;
+  height: auto;
+}
+.ediya-menu [role="button"]:hover img,
+.ediya-menu [role="button"]:focus img{
+  transform: scale(1);
+}
+.ediya-menu figcaption{
+  padding: 1.25em 0;
+}
+.ediya-menu__item--detail{
+  padding: 1em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 1px solid #aaa;
+  background-color: rgba(255,255,255,1);
+  transition: all 0.6s ease;
+}
+
+.ediya-menu__item--name {
+  display: block;
+  border-bottom: solid 2px #202023;
+  padding-bottom: 1em;
+  font-weight: 400;
+  font-size: 18px;
+  color: #202022;
+}
+
+.ediya-menu__item--name span {
+  display: block;
+  font-size: 14px;
+  color: #737373;
+}
+.ediya-menu__item--multi-column{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1em;
+  margin-top: auto;
+  column-count: 2;
+  column-rule: 1px solid #aaa;
+}
+.ediya-menu__item--multi-column dt,
+.ediya-menu__item--multi-column dd{
+  display: inline-block;
+  width: 40%;
+}
+.ediya-menu__item--multi-column dt{
+  margin-left: 10%;
+}
+
+.ediya-menu__item--multi-column dl,
+.ediya-menu__item--multi-column dd{
+  margin: 0;
+}
+.ediya-menu__item--detail .is-close-panel{
+  position: absolute;
+  top: 1em;
+  right: 1em;
 }
 /* 모바일  */
 @media screen and (max-width: 767px){
@@ -159,6 +237,12 @@ a img {
     -webkit-transform: scale(1.2);
     transform: scale(1.2);
   }
+  .app-main{
+    padding: 1.25em 1.125em;
+  }
+  .ediya-menu__item:nth-child(n+2){
+    margin-top: 1.25em;
+  }
 }
 /* 헤더 (데스크탑)  */
 @media screen and (min-width: 768px){
@@ -189,6 +273,24 @@ a img {
   .app-navigation a{
     display: block;
     padding: 8px 3px;
+  }
+  /* 이디야 음료 데스크탑 */
+  .ediya-menu{
+    width: 70%;
+    margin: 0 auto;
+    display: flow-root;
+  }
+  .ediya-menu__item{
+    width: 45%;
+  }
+  .ediya-menu__item:nth-child(odd){
+    float: left;
+  }
+  .ediya-menu__item:nth-child(even){
+    float: right;
+  }
+  .ediya-menu__item:nth-child(n+3){
+    margin-top: 1.25em;
   }
 }
 
